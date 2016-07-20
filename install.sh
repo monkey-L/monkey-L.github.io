@@ -3,7 +3,7 @@ echo "================ installing hexo ================"
 npm install hexo-cli -g
 
 echo "================ init ================"
-npc install
+npm install
 
 # rss
 echo "================ installing rss ================"
