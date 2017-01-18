@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[学着写技术博客]]></title>
+      <url>http://www.usuallight.com/2017/01/18/howwrite/</url>
+      <content type="html"><![CDATA[<p>最近想着手写写技术博客，在网上了解了下如何去写好一篇技术博客，我总结了下觉得有两点说得挺好：</p>
+<ul>
+<li>技术博客不是写过程，而是写总结。</li>
+<li>技术博客是文章，应该过滤掉个人感情色彩，用陈述语气进行描述，因为读者想了解的是技术本身，而不是作者的个人感受。</li>
+</ul>
+<p>学习了大牛们的技术博客后，加上我个人的理解，我觉得写一篇技术博客应该具备以下的点：</p>
+<ol>
+<li>主题：明确博客主题，全文围绕主题展开，一文只论一题，若涉及其它主题则另开新篇博文进行描述。</li>
+<li>开篇：由于个人喜好原因，我觉得文章开篇可适当讲述下主题背景原因，从背景原因开启一篇文章。（个人认为会给读者像是在听故事的感觉）</li>
+<li>内容：接下来就是总结内容了，可以针对不同方案，总结利弊等。内容尽量以图形进行表达，少用文字和代码。</li>
+<li>待完善的点（可选）：不足之处，还能完善或者解决的地方。</li>
+<li>源码（可选）：若能提供源码，可放上自己的github链接。</li>
+<li>参考链接：支持原创，引用到的文章注明出处。</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[assetbundle打包策略]]></title>
+      <url>http://www.usuallight.com/2017/01/10/assetbundle/</url>
+      <content type="html"><![CDATA[<p>此文只针对打包的策略作分析</p>
+<h1 id="整包"><a href="#整包" class="headerlink" title="整包"></a>整包</h1><h1 id="散包"><a href="#散包" class="headerlink" title="散包"></a>散包</h1><p>Assets:</p>
+<ul>
+<li>material</li>
+<li>texture<ul>
+<li>model1</li>
+<li>model2</li>
+<li>effect1</li>
+<li>effect2</li>
+<li>common</li>
+</ul>
+</li>
+<li>motion<ul>
+<li>model1</li>
+<li>model2</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<p>Resources:</p>
+<ul>
+<li>shader</li>
+<li>script</li>
+<li>setting</li>
+<li>navdata</li>
+<li>audio</li>
+<li>model</li>
+<li>effect</li>
+<li>ui</li>
+<li>img</li>
+<li>atlas</li>
+<li>other</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo+Next+Github 搭建个人博客]]></title>
+      <url>http://www.usuallight.com/2016/08/12/blog-hexo/</url>
+      <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>用Hexo搭建网站主要就是两个配置文件，一个站点配置文件(/_config.yml)，另一个是主题配置文件(/themes/[themefolder]/_config.yml)，配置好这两个配置文件基本就可以了，剩下的都只是一些安装和部署。</p>
+<a id="more"></a>
+<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><p>官方链接：<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">https://hexo.io/zh-cn/</a></p>
+<h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><ul>
+<li>Hexo依赖于Node.js，需提前安装<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a></li>
+<li><p>安装Hexo，应用Node.js指令：  </p>
+<pre><code>npm install hexo-cli -g
+</code></pre></li>
+<li><p>新建Hexo工程</p>
+<pre><code>hexo init &lt;folder&gt;    
+</code></pre></li>
+<li><p>初始化Hexo</p>
+<pre><code>npm install
+</code></pre></li>
+</ul>
+<h2 id="扩展功能"><a href="#扩展功能" class="headerlink" title="扩展功能"></a>扩展功能</h2><ul>
+<li><p>添加rss</p>
+<pre><code>npm install hexo-generator-feed --save
+</code></pre></li>
+<li><p>站内搜索</p>
+<pre><code>npm install hexo-generator-search --save
+</code></pre><p>  配置站点文件：</p>
+<pre><code>search:
+path: search.xml
+field: post
+</code></pre></li>
+<li><p>Github托管</p>
+<pre><code>npm install hexo-deployer-git --save    
+</code></pre><p>  配置站点文件：</p>
+<pre><code>deploy:
+type: git
+repository: https://github.com/monkeylight/monkeylight.github.io.git
+branch: master
+</code></pre></li>
+</ul>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ul>
+<li><p>生成静态文件(public文件夹) </p>
+<pre><code>hexo generate/-g
+</code></pre></li>
+<li><p>清除缓存文件(db.json)和已生成的静态文件(public文件夹)</p>
+<pre><code>hexo clean
+</code></pre></li>
+<li><p>启动本地服务器</p>
+<pre><code>hexo server
+</code></pre></li>
+<li><p>部署网站到托管平台</p>
+<pre><code>hexo deploy/-d
+</code></pre></li>
+<li><p>新建文章</p>
+<pre><code>hexo new [layout] &lt;title&gt;
+</code></pre><p>  layout有三种：post（博客）/ page（页面）/ draft（草稿）</p>
+<p>  例如，新建一个“关于”页：</p>
+<pre><code>hexo new page about
+</code></pre></li>
+</ul>
+<h1 id="NexT主题"><a href="#NexT主题" class="headerlink" title="NexT主题"></a>NexT主题</h1><p>官方链接：<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">http://theme-next.iissnan.com/</a></p>
+<p>主题主要是一些配置信息的设置，官方文档里说得很详细，根据自己喜好和需要配置即可。但我在使用过程中遇到了一些问题，官方文档里没提及，在这分享一下：</p>
+<ul>
+<li><p>官方推荐的Swiftype搜索用不了，据说是Switftype开始收费的原因，所以不支持了（-.- 只是听说）。<br>  解决方法：<br>  见上方Hexo页–&gt;扩展功能–&gt;站内搜索</p>
+</li>
+<li><p>about页面使用无序列表没有小圆圈标识。<br>  解决方法：<br>  添加自定义样式，在配置文件/themes/next/source/css/_custom/custom.styl中添加代码：</p>
+<pre><code>ul { list-style-type: circle; }
+</code></pre></li>
+</ul>
+<h1 id="环境共享"><a href="#环境共享" class="headerlink" title="环境共享"></a>环境共享</h1><p>单纯地用hexo部署网站，会有几个问题：</p>
+<ol>
+<li>每次部署都会覆盖上一次的内容，上次的提交记录会被清除！这不方便我查看历史记录</li>
+<li>共享配置环境的问题，我总不能每次换个地方都要重新配置一次hexo环境吧，那多恶心。</li>
+</ol>
+<p>针对以上问题，我首先想到的是在Github上用多一个仓库来存储hexo的配置环境，一个用来手动提交网站配置和博客内容，一个用来一健部署托管后台。后来在网上看到更机智的，就是用一个仓库多分支就行了，没必要多仓库。</p>
+<h1 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h1><p>域名方面有两个选择：  </p>
+<ol>
+<li>直接使用github的二级域名（username.github.io），免费！  </li>
+<li>自己买个域名。买吧，感觉多爽，哈哈。</li>
+</ol>
+<h2 id="个人域名"><a href="#个人域名" class="headerlink" title="个人域名"></a>个人域名</h2><ol>
+<li>域名购买（我是在godaddy买的，这个看你喜好吧）</li>
+<li>绑定github:<br> 在hexo/source文件夹下新建文件：CNAME（无后缀名），添加内容：yourwebsite.com</li>
+<li>配置DNS，可以在godaddy的dns管理中配置，也可以用 <a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSPod</a> 来管理更快和稳定。配置项：<ul>
+<li>添加两条A记录分别指向Github服务器：<br>  <img src="dns1.png" alt="pic"></li>
+<li>添加一条CNAME记录指向你用hexo部署的Githubt仓库（例如我的：monkeylight.github.io）：<br>  <img src="dns2.png" alt="pic"></li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>附：<a href="https://github.com/monkeylight/monkeylight.github.io" target="_blank" rel="external">monkeylight.github.io</a> 这个的是我的hexo环境配置，有兴趣的可以参考看看</p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
