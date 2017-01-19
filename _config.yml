@@ -69,6 +69,9 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: next
 
+baidusitemap: 
+- path: baidusitemap.xml
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
