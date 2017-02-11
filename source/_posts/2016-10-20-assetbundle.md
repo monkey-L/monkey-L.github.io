@@ -46,6 +46,7 @@ categories: assetbundle
 - www加载文本文件后，用www.text访问文本内容会有编码限制。官方文档上有要求文件内容为utf8或者ascii编码，如果是其它编码格式，需要通过www.bytes转编码为string(如：System.Text.Encoding.UTF7.GetString(www.bytes))，另一个问题是，官方文档中提的utf8是不带bom的，我是用c#自带的System.Text.Encoding.UTF8写出来的文件，查了格式才知道，原来这样写出来的文件是默认带bom的，如果希望文件是无bom的utf8编码，应该自己创建(new UTF8Encoding(false))进行写入。
 - android streamingdatapath是在apk包里面，无法直接使用本地读取，只能通过www访问
 - 平台路径问题
+- 异步加载读资源失败，同步加载没问题？
 
 # 资源目录
 - setting
