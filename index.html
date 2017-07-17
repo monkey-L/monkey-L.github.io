@@ -273,6 +273,160 @@
             
               
                 
+                <a class="post-title-link" href="/2017/01/20/assetbundle-optimization/" itemprop="url">
+                  assetbundle-optimization
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-20T23:03:31+08:00" content="2017-01-20">
+              2017-01-20
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/01/20/assetbundle-optimization/" class="leancloud_visitors" data-flag-title="assetbundle-optimization">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>主要问题是散包很多，加载太慢。我导出了份数据，其中大部分模型单个模型都依赖了20多个包。针对散包的问题，由于散包主要为材质球和其依赖的贴图还有声音，因此考虑了以下优化点：</p>
+<p>公用资源（shader、setting、script、mapdata）：</p>
+<ul>
+<li>一种资源一个包，按文件夹打包</li>
+</ul>
+<p>模型：</p>
+<ul>
+<li>模型预设不要直接绑定特效和声音</li>
+<li>模型贴图一个包，模型动作一个包，模型shader在shader包，其它模型依赖作为一个包。</li>
+</ul>
+<p>贴图：</p>
+<ol>
+<li>贴图归类，按文件夹打包（通用贴图、模型贴图、特效贴图）</li>
+</ol>
+<p>特效：</p>
+<ol>
+<li>特效分类，</li>
+</ol>
+<p>图集：</p>
+<ol>
+<li>一个图集一个包</li>
+</ol>
+<p>UI：</p>
+<ol>
+<li>除了图集外，一个UI一个包.</li>
+</ol>
+<p>声音：</p>
+<ol>
+<li>声音分类，按文件夹打包</li>
+</ol>
+<p>材质：</p>
+<ol>
+<li></li>
+</ol>
+<h1 id="目标："><a href="#目标：" class="headerlink" title="目标："></a>目标：</h1><h1 id="方案："><a href="#方案：" class="headerlink" title="方案："></a>方案：</h1><p>Resources:</p>
+<p>整包资源：</p>
+<ul>
+<li>setting</li>
+<li>script</li>
+<li>shader</li>
+</ul>
+<p>散包资源：</p>
+<ul>
+<li>audio</li>
+<li>model</li>
+<li>effect</li>
+<li>ui</li>
+<li>atlas</li>
+<li>other</li>
+<li>img</li>
+<li>navdata</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/01/18/howwrite/" itemprop="url">
                   学着写技术博客
                 </a>
@@ -334,11 +488,266 @@
 <p>学习了大牛们的技术博客后，加上我个人的理解，我觉得写一篇技术博客应该具备以下的点：</p>
 <ol>
 <li>主题：明确博客主题，全文围绕主题展开，一文只论一题，若涉及其它主题则另开新篇博文进行描述。</li>
-<li>开篇：由于个人喜好原因，我觉得文章开篇可适当讲述下主题背景原因，从背景原因开启一篇文章。（个人认为会给读者像是在听故事的感觉）</li>
-<li>内容：接下来就是总结内容了，可以针对不同方案，总结利弊等。内容尽量以图形进行表达，少用文字和代码。</li>
+<li>开篇：由于个人喜好原因，我觉得文章开篇可适当讲述下主题背景原因，从背景原因开启一篇文章。（个人觉得这样会给读者像是在听故事的感觉，不会那么突兀）</li>
+<li>内容：针对遇到的问题进行阐述，并提出自己的思路或解决方案。内容尽量以图形进行表达，少用文字和代码。</li>
 <li>待完善的点（可选）：不足之处，还能完善或者解决的地方。</li>
 <li>源码（可选）：若能提供源码，可放上自己的github链接。</li>
-<li>参考链接：支持原创，引用到的文章注明出处。</li>
+<li>参考链接：支持原创，引用到他人文章内容时注明出处。</li>
+</ol>
+<p>目前暂时只想到这些，日后若有新的想法，会持续更新和完善此文。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/01/04/assetbundle-pack/" itemprop="url">
+                  assetbundle打包策略
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-04T14:24:36+08:00" content="2017-01-04">
+              2017-01-04
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/01/04/assetbundle-pack/" class="leancloud_visitors" data-flag-title="assetbundle打包策略">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>做打包已经有一阵子了，之前只是记了些备忘，最近才开始想写博客，现在来把它补上。刚开始接触assetbundle时，新来的老大带了一份他以前，不是很清楚要怎么处理资源依赖比较好，出现了相互依赖的情况，</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/28/mobaaoi/" itemprop="url">
+                  moba类游戏的视野同步
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-28T15:08:31+08:00" content="2016-12-28">
+              2016-12-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/moba/" itemprop="url" rel="index">
+                    <span itemprop="name">moba</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/12/28/mobaaoi/" class="leancloud_visitors" data-flag-title="moba类游戏的视野同步">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><ol>
+<li><p>对象类型分组：</p>
+<ul>
+<li>观察者（watcher）</li>
+<li><p>被观察者（marker）</p>
+<p>对象可以既是观察者，又是被观察者。</p>
+</li>
+</ul>
+</li>
+<li><p>对象触发检查的时机：</p>
+<ul>
+<li>对象新增</li>
+<li>对象移除</li>
+<li>对象位置更新</li>
+</ul>
+</li>
+<li><p>对象检查时的比较集：</p>
+<ul>
+<li>对象是观察者，比较所有</li>
+<li>对象不是观察者，只与观察者比较</li>
+</ul>
+</li>
+<li><p>优化点：</p>
+<ul>
+<li>阵营区分，同阵营观察者间不作比较</li>
+<li>限制位置更新触发检查的时机，线段移动一定距离再触发</li>
+</ul>
+</li>
+<li></li>
 </ol>
 
           
@@ -389,8 +798,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/01/10/assetbundle/" itemprop="url">
-                  assetbundle打包策略
+                <a class="post-title-link" href="/2016/10/20/assetbundle/" itemprop="url">
+                  Unity打包和热更新&&assetbundle
                 </a>
               
             
@@ -403,8 +812,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-10T00:52:57+08:00" content="2017-01-10">
-              2017-01-10
+            <time itemprop="dateCreated" datetime="2016-10-20T14:44:20+08:00" content="2016-10-20">
+              2016-10-20
             </time>
           </span>
 
@@ -417,8 +826,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/unity/" itemprop="url" rel="index">
-                    <span itemprop="name">unity</span>
+                  <a href="/categories/assetbundle/" itemprop="url" rel="index">
+                    <span itemprop="name">assetbundle</span>
                   </a>
                 </span>
 
@@ -437,7 +846,7 @@
 
           
           
-             <span id="/2017/01/10/assetbundle/" class="leancloud_visitors" data-flag-title="assetbundle打包策略">
+             <span id="/2016/10/20/assetbundle/" class="leancloud_visitors" data-flag-title="Unity打包和热更新&&assetbundle">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -461,38 +870,88 @@
       
         
           
-            <p>此文只针对打包的策略作分析</p>
-<h1 id="整包"><a href="#整包" class="headerlink" title="整包"></a>整包</h1><h1 id="散包"><a href="#散包" class="headerlink" title="散包"></a>散包</h1><p>Assets:</p>
-<ul>
-<li>material</li>
-<li>texture<ul>
-<li>model1</li>
-<li>model2</li>
-<li>effect1</li>
-<li>effect2</li>
-<li>common</li>
+            <h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><h2 id="流程问题"><a href="#流程问题" class="headerlink" title="流程问题"></a>流程问题</h2><ul>
+<li>怎么管理资源？</li>
+<li>怎么划分assetbundle包？</li>
+<li>怎么处理依赖？</li>
+<li>怎么做差异/增量更新？</li>
+<li>怎么加载和管理assetbundle？</li>
+<li>环境配置</li>
 </ul>
+<h2 id="细节问题"><a href="#细节问题" class="headerlink" title="细节问题"></a>细节问题</h2><ul>
+<li><p>依赖需要按顺序加载不？<br>不需要，保证所有依赖包能加载进来就行</p>
 </li>
-<li>motion<ul>
-<li>model1</li>
-<li>model2</li>
-</ul>
+<li><p>怎么处理资源路径和ab的映射问题？</p>
 </li>
-<li></li>
+<li>resources的加载是不加扩展名，而ab的加载是加扩展名，因此一开始就应该定义好路径规则，统一都传带扩展名的路径，判断是用resources加载时再动态去掉扩展名</li>
+<li>预设的引用太乱了，不干净，例如模型上预设又挂着特效资源，特效预设又挂着声音资源，这样会很影响到打包依赖，所以此时每种资源应该有个管理，例如特效管理和声音管理，相互之间的关联再通过配置表实现</li>
+<li>同个bundle中的资源同名问题？<br>按文件夹打包，根据全路径读取是最好的，ab读取资源的路径参数有两种方式：<ol>
+<li>资源名（不带路径，不带扩展名，包内资源名必须唯一）</li>
+<li>全路径（带路径，带扩展名）</li>
+</ol>
+</li>
+<li>依赖包需不需要按顺序加载？</li>
+<li>asset后缀文件打不进ab包？</li>
+<li>用#号拼出assetbundle名后，www加载会有失败</li>
+<li>xcode是7.3，而真机是10.0，导致程序Build不进手机，而电脑又是黑苹果，升级系统会各种问题，后面查了下原来可以直接复制更高版本的xcode程序包下的高版本文件到低版本程序包里，ios的目录是：Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport/，下面有各个版本的支持情况</li>
+<li>路径名不能有空格，不然ios读不到</li>
+<li>依赖不加载全，就所有资源都不能加载还是指定资源的依赖都加载了就能加载此资源？</li>
+<li>同个资源能同时打到不同包上吗</li>
+<li>更新异常处理：<ol>
+<li>网络挂了</li>
+<li>磁盘满</li>
+<li>gprs网络提示</li>
+</ol>
+</li>
+<li>协程处理热更新时，需要处理异常的处理，因为协程内发生异常是不影响协程外执行的</li>
 </ul>
-<p>Resources:</p>
-<ul>
-<li>shader</li>
-<li>script</li>
+<h1 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h1><ul>
+<li>我的mac机是64位，要选osx64平台才能打包成功</li>
+<li>打包时我是对resources下的文件夹移至</li>
+<li>www加载文本文件后，用www.text访问文本内容会有编码限制。官方文档上有要求文件内容为utf8或者ascii编码，如果是其它编码格式，需要通过www.bytes转编码为string(如：System.Text.Encoding.UTF7.GetString(www.bytes))，另一个问题是，官方文档中提的utf8是不带bom的，我是用c#自带的System.Text.Encoding.UTF8写出来的文件，查了格式才知道，原来这样写出来的文件是默认带bom的，如果希望文件是无bom的utf8编码，应该自己创建(new UTF8Encoding(false))进行写入。</li>
+<li>android streamingdatapath是在apk包里面，无法直接使用本地读取，只能通过www访问</li>
+<li>平台路径问题</li>
+<li>异步加载读资源失败，同步加载没问题？</li>
+</ul>
+<h1 id="资源目录"><a href="#资源目录" class="headerlink" title="资源目录"></a>资源目录</h1><ul>
 <li>setting</li>
-<li>navdata</li>
+<li>script</li>
+<li>shaders</li>
 <li>audio</li>
+<li>font</li>
 <li>model</li>
-<li>effect</li>
 <li>ui</li>
-<li>img</li>
-<li>atlas</li>
-<li>other</li>
+<li>effect</li>
+<li>texture</li>
+</ul>
+<h1 id="资源打包"><a href="#资源打包" class="headerlink" title="资源打包"></a>资源打包</h1><h2 id="打包策略"><a href="#打包策略" class="headerlink" title="打包策略"></a>打包策略</h2><h3 id="整包"><a href="#整包" class="headerlink" title="整包"></a>整包</h3><ul>
+<li>setting</li>
+<li>script</li>
+<li>shader</li>
+<li>audio</li>
+<li>font</li>
+<li>ui</li>
+</ul>
+<h3 id="散包"><a href="#散包" class="headerlink" title="散包"></a>散包</h3><p>主包名与其资源目录相同，便于查找</p>
+<ol>
+<li>主包</li>
+</ol>
+<ul>
+<li>每个model预设</li>
+<li>每个特效预设</li>
+<li>每个UI贴图</li>
+</ul>
+<ol>
+<li>依赖包</li>
+</ol>
+<h3 id="资源包目录结构"><a href="#资源包目录结构" class="headerlink" title="资源包目录结构"></a>资源包目录结构</h3><h1 id="资源更新"><a href="#资源更新" class="headerlink" title="资源更新"></a>资源更新</h1><h1 id="资源加载"><a href="#资源加载" class="headerlink" title="资源加载"></a>资源加载</h1><h1 id="assetbundle流程"><a href="#assetbundle流程" class="headerlink" title="assetbundle流程"></a>assetbundle流程</h1><ul>
+<li>assetbundle打包</li>
+<li>assetbundle上传</li>
+<li>assetbunlde下载</li>
+<li>assetbundle加载</li>
+<li>asset加载 </li>
+<li>assetbundle卸载</li>
+<li>www释放</li>
 </ul>
 
           
@@ -687,7 +1146,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -695,7 +1154,7 @@
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -704,7 +1163,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

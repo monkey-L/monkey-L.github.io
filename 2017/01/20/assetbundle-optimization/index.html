@@ -86,15 +86,40 @@
 
 
 
-<meta name="description" content="stay hungry, stay foolish">
-<meta property="og:type" content="website">
-<meta property="og:title" content="L杂货店">
-<meta property="og:url" content="http://www.usuallight.com/archives/2016/08/index.html">
+<meta name="description" content="主要问题是散包很多，加载太慢。我导出了份数据，其中大部分模型单个模型都依赖了20多个包。针对散包的问题，由于散包主要为材质球和其依赖的贴图还有声音，因此考虑了以下优化点：
+公用资源（shader、setting、script、mapdata）：
+
+一种资源一个包，按文件夹打包
+
+模型：
+
+模型预设不要直接绑定特效和声音
+模型贴图一个包，模型动作一个包，模型shader在shader包，其它模型依赖">
+<meta property="og:type" content="article">
+<meta property="og:title" content="assetbundle-optimization">
+<meta property="og:url" content="http://www.usuallight.com/2017/01/20/assetbundle-optimization/index.html">
 <meta property="og:site_name" content="L杂货店">
-<meta property="og:description" content="stay hungry, stay foolish">
+<meta property="og:description" content="主要问题是散包很多，加载太慢。我导出了份数据，其中大部分模型单个模型都依赖了20多个包。针对散包的问题，由于散包主要为材质球和其依赖的贴图还有声音，因此考虑了以下优化点：
+公用资源（shader、setting、script、mapdata）：
+
+一种资源一个包，按文件夹打包
+
+模型：
+
+模型预设不要直接绑定特效和声音
+模型贴图一个包，模型动作一个包，模型shader在shader包，其它模型依赖">
+<meta property="og:updated_time" content="2017-07-17T09:03:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="L杂货店">
-<meta name="twitter:description" content="stay hungry, stay foolish">
+<meta name="twitter:title" content="assetbundle-optimization">
+<meta name="twitter:description" content="主要问题是散包很多，加载太慢。我导出了份数据，其中大部分模型单个模型都依赖了20多个包。针对散包的问题，由于散包主要为材质球和其依赖的贴图还有声音，因此考虑了以下优化点：
+公用资源（shader、setting、script、mapdata）：
+
+一种资源一个包，按文件夹打包
+
+模型：
+
+模型预设不要直接绑定特效和声音
+模型贴图一个包，模型动作一个包，模型shader在shader包，其它模型依赖">
 
 
 
@@ -115,9 +140,9 @@
 
 
 
-  <link rel="canonical" href="http://www.usuallight.com/archives/2016/08/"/>
+  <link rel="canonical" href="http://www.usuallight.com/2017/01/20/assetbundle-optimization/"/>
 
-  <title> 归档 | L杂货店 </title>
+  <title> assetbundle-optimization | L杂货店 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -138,7 +163,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -249,66 +274,175 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 6 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                assetbundle-optimization
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-20T23:03:31+08:00" content="2017-01-20">
+              2017-01-20
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/01/20/assetbundle-optimization/" class="leancloud_visitors" data-flag-title="assetbundle-optimization">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <p>主要问题是散包很多，加载太慢。我导出了份数据，其中大部分模型单个模型都依赖了20多个包。针对散包的问题，由于散包主要为材质球和其依赖的贴图还有声音，因此考虑了以下优化点：</p>
+<p>公用资源（shader、setting、script、mapdata）：</p>
+<ul>
+<li>一种资源一个包，按文件夹打包</li>
+</ul>
+<p>模型：</p>
+<ul>
+<li>模型预设不要直接绑定特效和声音</li>
+<li>模型贴图一个包，模型动作一个包，模型shader在shader包，其它模型依赖作为一个包。</li>
+</ul>
+<p>贴图：</p>
+<ol>
+<li>贴图归类，按文件夹打包（通用贴图、模型贴图、特效贴图）</li>
+</ol>
+<p>特效：</p>
+<ol>
+<li>特效分类，</li>
+</ol>
+<p>图集：</p>
+<ol>
+<li>一个图集一个包</li>
+</ol>
+<p>UI：</p>
+<ol>
+<li>除了图集外，一个UI一个包.</li>
+</ol>
+<p>声音：</p>
+<ol>
+<li>声音分类，按文件夹打包</li>
+</ol>
+<p>材质：</p>
+<ol>
+<li></li>
+</ol>
+<h1 id="目标："><a href="#目标：" class="headerlink" title="目标："></a>目标：</h1><h1 id="方案："><a href="#方案：" class="headerlink" title="方案："></a>方案：</h1><p>Resources:</p>
+<p>整包资源：</p>
+<ul>
+<li>setting</li>
+<li>script</li>
+<li>shader</li>
+</ul>
+<p>散包资源：</p>
+<ul>
+<li>audio</li>
+<li>model</li>
+<li>effect</li>
+<li>ui</li>
+<li>atlas</li>
+<li>other</li>
+<li>img</li>
+<li>navdata</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/18/howwrite/" rel="next" title="学着写技术博客">
+                <i class="fa fa-chevron-left"></i> 学着写技术博客
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
         </div>
       
-      
 
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/12/blog-hexo/" itemprop="url">
-              
-                <span itemprop="name">Hexo+Next+Github 搭建个人博客</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-12T10:30:29+08:00"
-              content="2016-08-12" >
-          08-12
-        </time>
-      </div>
-
-    </header>
+      
+    </footer>
   </article>
 
 
 
-    
-
-  </section>
-
-  
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -316,6 +450,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -335,8 +473,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -404,6 +551,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目标："><span class="nav-number">1.</span> <span class="nav-text">目标：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方案："><span class="nav-number">2.</span> <span class="nav-text">方案：</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -500,11 +658,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   

@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="moba,aoi," />
 
 
 
@@ -86,15 +86,91 @@
 
 
 
-<meta name="description" content="stay hungry, stay foolish">
-<meta property="og:type" content="website">
-<meta property="og:title" content="L杂货店">
-<meta property="og:url" content="http://www.usuallight.com/archives/2016/08/index.html">
+<meta name="description" content="思路
+对象类型分组：
+
+观察者（watcher）
+被观察者（marker）
+对象可以既是观察者，又是被观察者。
+
+
+
+对象触发检查的时机：
+
+对象新增
+对象移除
+对象位置更新
+
+
+对象检查时的比较集：
+
+对象是观察者，比较所有
+对象不是观察者，只与观察者比较
+
+
+优化点：
+
+阵营区分，同阵营观察者间不作比较
+限制位置更新触发检查的时机，线段移动一定距离再触发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="moba类游戏的视野同步">
+<meta property="og:url" content="http://www.usuallight.com/2016/12/28/mobaaoi/index.html">
 <meta property="og:site_name" content="L杂货店">
-<meta property="og:description" content="stay hungry, stay foolish">
+<meta property="og:description" content="思路
+对象类型分组：
+
+观察者（watcher）
+被观察者（marker）
+对象可以既是观察者，又是被观察者。
+
+
+
+对象触发检查的时机：
+
+对象新增
+对象移除
+对象位置更新
+
+
+对象检查时的比较集：
+
+对象是观察者，比较所有
+对象不是观察者，只与观察者比较
+
+
+优化点：
+
+阵营区分，同阵营观察者间不作比较
+限制位置更新触发检查的时机，线段移动一定距离再触发">
+<meta property="og:updated_time" content="2017-01-19T16:19:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="L杂货店">
-<meta name="twitter:description" content="stay hungry, stay foolish">
+<meta name="twitter:title" content="moba类游戏的视野同步">
+<meta name="twitter:description" content="思路
+对象类型分组：
+
+观察者（watcher）
+被观察者（marker）
+对象可以既是观察者，又是被观察者。
+
+
+
+对象触发检查的时机：
+
+对象新增
+对象移除
+对象位置更新
+
+
+对象检查时的比较集：
+
+对象是观察者，比较所有
+对象不是观察者，只与观察者比较
+
+
+优化点：
+
+阵营区分，同阵营观察者间不作比较
+限制位置更新触发检查的时机，线段移动一定距离再触发">
 
 
 
@@ -115,9 +191,9 @@
 
 
 
-  <link rel="canonical" href="http://www.usuallight.com/archives/2016/08/"/>
+  <link rel="canonical" href="http://www.usuallight.com/2016/12/28/mobaaoi/"/>
 
-  <title> 归档 | L杂货店 </title>
+  <title> moba类游戏的视野同步 | L杂货店 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -138,7 +214,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -249,66 +325,184 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 6 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                moba类游戏的视野同步
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-28T15:08:31+08:00" content="2016-12-28">
+              2016-12-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/moba/" itemprop="url" rel="index">
+                    <span itemprop="name">moba</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/12/28/mobaaoi/" class="leancloud_visitors" data-flag-title="moba类游戏的视野同步">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><ol>
+<li><p>对象类型分组：</p>
+<ul>
+<li>观察者（watcher）</li>
+<li><p>被观察者（marker）</p>
+<p>对象可以既是观察者，又是被观察者。</p>
+</li>
+</ul>
+</li>
+<li><p>对象触发检查的时机：</p>
+<ul>
+<li>对象新增</li>
+<li>对象移除</li>
+<li>对象位置更新</li>
+</ul>
+</li>
+<li><p>对象检查时的比较集：</p>
+<ul>
+<li>对象是观察者，比较所有</li>
+<li>对象不是观察者，只与观察者比较</li>
+</ul>
+</li>
+<li><p>优化点：</p>
+<ul>
+<li>阵营区分，同阵营观察者间不作比较</li>
+<li>限制位置更新触发检查的时机，线段移动一定距离再触发</li>
+</ul>
+</li>
+<li></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/moba/" rel="tag">#moba</a>
+          
+            <a href="/tags/aoi/" rel="tag">#aoi</a>
+          
         </div>
       
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/20/assetbundle/" rel="next" title="Unity打包和热更新&&assetbundle">
+                <i class="fa fa-chevron-left"></i> Unity打包和热更新&&assetbundle
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/04/assetbundle-pack/" rel="prev" title="assetbundle打包策略">
+                assetbundle打包策略 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/12/blog-hexo/" itemprop="url">
-              
-                <span itemprop="name">Hexo+Next+Github 搭建个人博客</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-12T10:30:29+08:00"
-              content="2016-08-12" >
-          08-12
-        </time>
-      </div>
-
-    </header>
+      
+    </footer>
   </article>
 
 
 
-    
-
-  </section>
-
-  
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -316,6 +510,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -335,8 +533,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -404,6 +611,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#思路"><span class="nav-number">1.</span> <span class="nav-text">思路</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -500,11 +718,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   

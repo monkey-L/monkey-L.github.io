@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="assetbundle," />
 
 
 
@@ -86,15 +86,55 @@
 
 
 
-<meta name="description" content="stay hungry, stay foolish">
-<meta property="og:type" content="website">
-<meta property="og:title" content="L杂货店">
-<meta property="og:url" content="http://www.usuallight.com/archives/2016/08/index.html">
+<meta name="description" content="遇到的问题流程问题
+怎么管理资源？
+怎么划分assetbundle包？
+怎么处理依赖？
+怎么做差异/增量更新？
+怎么加载和管理assetbundle？
+环境配置
+
+细节问题
+依赖需要按顺序加载不？不需要，保证所有依赖包能加载进来就行
+
+怎么处理资源路径和ab的映射问题？
+
+resources的加载是不加扩展名，而ab的加载是加扩展名，因此一开始就应该定义好路径规则，统一都传带扩展名的路径，判断是用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity打包和热更新&&assetbundle">
+<meta property="og:url" content="http://www.usuallight.com/2016/10/20/assetbundle/index.html">
 <meta property="og:site_name" content="L杂货店">
-<meta property="og:description" content="stay hungry, stay foolish">
+<meta property="og:description" content="遇到的问题流程问题
+怎么管理资源？
+怎么划分assetbundle包？
+怎么处理依赖？
+怎么做差异/增量更新？
+怎么加载和管理assetbundle？
+环境配置
+
+细节问题
+依赖需要按顺序加载不？不需要，保证所有依赖包能加载进来就行
+
+怎么处理资源路径和ab的映射问题？
+
+resources的加载是不加扩展名，而ab的加载是加扩展名，因此一开始就应该定义好路径规则，统一都传带扩展名的路径，判断是用">
+<meta property="og:updated_time" content="2017-07-17T09:03:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="L杂货店">
-<meta name="twitter:description" content="stay hungry, stay foolish">
+<meta name="twitter:title" content="Unity打包和热更新&&assetbundle">
+<meta name="twitter:description" content="遇到的问题流程问题
+怎么管理资源？
+怎么划分assetbundle包？
+怎么处理依赖？
+怎么做差异/增量更新？
+怎么加载和管理assetbundle？
+环境配置
+
+细节问题
+依赖需要按顺序加载不？不需要，保证所有依赖包能加载进来就行
+
+怎么处理资源路径和ab的映射问题？
+
+resources的加载是不加扩展名，而ab的加载是加扩展名，因此一开始就应该定义好路径规则，统一都传带扩展名的路径，判断是用">
 
 
 
@@ -115,9 +155,9 @@
 
 
 
-  <link rel="canonical" href="http://www.usuallight.com/archives/2016/08/"/>
+  <link rel="canonical" href="http://www.usuallight.com/2016/10/20/assetbundle/"/>
 
-  <title> 归档 | L杂货店 </title>
+  <title> Unity打包和热更新&&assetbundle | L杂货店 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -138,7 +178,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -249,66 +289,235 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 6 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Unity打包和热更新&&assetbundle
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-20T14:44:20+08:00" content="2016-10-20">
+              2016-10-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/assetbundle/" itemprop="url" rel="index">
+                    <span itemprop="name">assetbundle</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/20/assetbundle/" class="leancloud_visitors" data-flag-title="Unity打包和热更新&&assetbundle">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><h2 id="流程问题"><a href="#流程问题" class="headerlink" title="流程问题"></a>流程问题</h2><ul>
+<li>怎么管理资源？</li>
+<li>怎么划分assetbundle包？</li>
+<li>怎么处理依赖？</li>
+<li>怎么做差异/增量更新？</li>
+<li>怎么加载和管理assetbundle？</li>
+<li>环境配置</li>
+</ul>
+<h2 id="细节问题"><a href="#细节问题" class="headerlink" title="细节问题"></a>细节问题</h2><ul>
+<li><p>依赖需要按顺序加载不？<br>不需要，保证所有依赖包能加载进来就行</p>
+</li>
+<li><p>怎么处理资源路径和ab的映射问题？</p>
+</li>
+<li>resources的加载是不加扩展名，而ab的加载是加扩展名，因此一开始就应该定义好路径规则，统一都传带扩展名的路径，判断是用resources加载时再动态去掉扩展名</li>
+<li>预设的引用太乱了，不干净，例如模型上预设又挂着特效资源，特效预设又挂着声音资源，这样会很影响到打包依赖，所以此时每种资源应该有个管理，例如特效管理和声音管理，相互之间的关联再通过配置表实现</li>
+<li>同个bundle中的资源同名问题？<br>按文件夹打包，根据全路径读取是最好的，ab读取资源的路径参数有两种方式：<ol>
+<li>资源名（不带路径，不带扩展名，包内资源名必须唯一）</li>
+<li>全路径（带路径，带扩展名）</li>
+</ol>
+</li>
+<li>依赖包需不需要按顺序加载？</li>
+<li>asset后缀文件打不进ab包？</li>
+<li>用#号拼出assetbundle名后，www加载会有失败</li>
+<li>xcode是7.3，而真机是10.0，导致程序Build不进手机，而电脑又是黑苹果，升级系统会各种问题，后面查了下原来可以直接复制更高版本的xcode程序包下的高版本文件到低版本程序包里，ios的目录是：Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport/，下面有各个版本的支持情况</li>
+<li>路径名不能有空格，不然ios读不到</li>
+<li>依赖不加载全，就所有资源都不能加载还是指定资源的依赖都加载了就能加载此资源？</li>
+<li>同个资源能同时打到不同包上吗</li>
+<li>更新异常处理：<ol>
+<li>网络挂了</li>
+<li>磁盘满</li>
+<li>gprs网络提示</li>
+</ol>
+</li>
+<li>协程处理热更新时，需要处理异常的处理，因为协程内发生异常是不影响协程外执行的</li>
+</ul>
+<h1 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h1><ul>
+<li>我的mac机是64位，要选osx64平台才能打包成功</li>
+<li>打包时我是对resources下的文件夹移至</li>
+<li>www加载文本文件后，用www.text访问文本内容会有编码限制。官方文档上有要求文件内容为utf8或者ascii编码，如果是其它编码格式，需要通过www.bytes转编码为string(如：System.Text.Encoding.UTF7.GetString(www.bytes))，另一个问题是，官方文档中提的utf8是不带bom的，我是用c#自带的System.Text.Encoding.UTF8写出来的文件，查了格式才知道，原来这样写出来的文件是默认带bom的，如果希望文件是无bom的utf8编码，应该自己创建(new UTF8Encoding(false))进行写入。</li>
+<li>android streamingdatapath是在apk包里面，无法直接使用本地读取，只能通过www访问</li>
+<li>平台路径问题</li>
+<li>异步加载读资源失败，同步加载没问题？</li>
+</ul>
+<h1 id="资源目录"><a href="#资源目录" class="headerlink" title="资源目录"></a>资源目录</h1><ul>
+<li>setting</li>
+<li>script</li>
+<li>shaders</li>
+<li>audio</li>
+<li>font</li>
+<li>model</li>
+<li>ui</li>
+<li>effect</li>
+<li>texture</li>
+</ul>
+<h1 id="资源打包"><a href="#资源打包" class="headerlink" title="资源打包"></a>资源打包</h1><h2 id="打包策略"><a href="#打包策略" class="headerlink" title="打包策略"></a>打包策略</h2><h3 id="整包"><a href="#整包" class="headerlink" title="整包"></a>整包</h3><ul>
+<li>setting</li>
+<li>script</li>
+<li>shader</li>
+<li>audio</li>
+<li>font</li>
+<li>ui</li>
+</ul>
+<h3 id="散包"><a href="#散包" class="headerlink" title="散包"></a>散包</h3><p>主包名与其资源目录相同，便于查找</p>
+<ol>
+<li>主包</li>
+</ol>
+<ul>
+<li>每个model预设</li>
+<li>每个特效预设</li>
+<li>每个UI贴图</li>
+</ul>
+<ol>
+<li>依赖包</li>
+</ol>
+<h3 id="资源包目录结构"><a href="#资源包目录结构" class="headerlink" title="资源包目录结构"></a>资源包目录结构</h3><h1 id="资源更新"><a href="#资源更新" class="headerlink" title="资源更新"></a>资源更新</h1><h1 id="资源加载"><a href="#资源加载" class="headerlink" title="资源加载"></a>资源加载</h1><h1 id="assetbundle流程"><a href="#assetbundle流程" class="headerlink" title="assetbundle流程"></a>assetbundle流程</h1><ul>
+<li>assetbundle打包</li>
+<li>assetbundle上传</li>
+<li>assetbunlde下载</li>
+<li>assetbundle加载</li>
+<li>asset加载 </li>
+<li>assetbundle卸载</li>
+<li>www释放</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/assetbundle/" rel="tag">#assetbundle</a>
+          
         </div>
       
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/12/blog-hexo/" rel="next" title="Hexo+Next+Github 搭建个人博客">
+                <i class="fa fa-chevron-left"></i> Hexo+Next+Github 搭建个人博客
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/28/mobaaoi/" rel="prev" title="moba类游戏的视野同步">
+                moba类游戏的视野同步 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/08/12/blog-hexo/" itemprop="url">
-              
-                <span itemprop="name">Hexo+Next+Github 搭建个人博客</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-12T10:30:29+08:00"
-              content="2016-08-12" >
-          08-12
-        </time>
-      </div>
-
-    </header>
+      
+    </footer>
   </article>
 
 
 
-    
-
-  </section>
-
-  
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -316,6 +525,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -335,8 +548,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -404,6 +626,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#遇到的问题"><span class="nav-number">1.</span> <span class="nav-text">遇到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#流程问题"><span class="nav-number">1.1.</span> <span class="nav-text">流程问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#细节问题"><span class="nav-number">1.2.</span> <span class="nav-text">细节问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#坑"><span class="nav-number">2.</span> <span class="nav-text">坑</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#资源目录"><span class="nav-number">3.</span> <span class="nav-text">资源目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#资源打包"><span class="nav-number">4.</span> <span class="nav-text">资源打包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#打包策略"><span class="nav-number">4.1.</span> <span class="nav-text">打包策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整包"><span class="nav-number">4.1.1.</span> <span class="nav-text">整包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#散包"><span class="nav-number">4.1.2.</span> <span class="nav-text">散包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资源包目录结构"><span class="nav-number">4.1.3.</span> <span class="nav-text">资源包目录结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#资源更新"><span class="nav-number">5.</span> <span class="nav-text">资源更新</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#资源加载"><span class="nav-number">6.</span> <span class="nav-text">资源加载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#assetbundle流程"><span class="nav-number">7.</span> <span class="nav-text">assetbundle流程</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -500,11 +733,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
