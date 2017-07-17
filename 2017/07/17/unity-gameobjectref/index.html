@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="assetbundle,unity," />
+  <meta name="keywords" content="unity," />
 
 
 
@@ -86,109 +86,18 @@
 
 
 
-<meta name="description" content="此文只针对打包的策略作分析
-整包散包Assets:
-
-material
-texture
-model1
-model2
-effect1
-effect2
-common
-
-
-motion
-model1
-model2
-
-
-
-
-Resources:
-
-shader
-script
-setting
-navdata
-audio
-model
-effect
-ui
-img
-atlas
-other">
+<meta name="description" content="今天想到个问题，GameObject对象销毁后，其对象引用==null为true，按正常来说，一个类引用变量，在没主动置其为null的情况下与null是不等值的。因此，不是引用变量的值变了，而应该是==操作符被Unity重载了。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="assetbundle打包策略">
-<meta property="og:url" content="http://www.usuallight.com/2017/01/10/assetbundle/index.html">
+<meta property="og:title" content="Unity中GameObject对象引用">
+<meta property="og:url" content="http://www.usuallight.com/2017/07/17/unity-gameobjectref/index.html">
 <meta property="og:site_name" content="L杂货店">
-<meta property="og:description" content="此文只针对打包的策略作分析
-整包散包Assets:
-
-material
-texture
-model1
-model2
-effect1
-effect2
-common
-
-
-motion
-model1
-model2
-
-
-
-
-Resources:
-
-shader
-script
-setting
-navdata
-audio
-model
-effect
-ui
-img
-atlas
-other">
-<meta property="og:updated_time" content="2017-01-16T15:29:52.000Z">
+<meta property="og:description" content="今天想到个问题，GameObject对象销毁后，其对象引用==null为true，按正常来说，一个类引用变量，在没主动置其为null的情况下与null是不等值的。因此，不是引用变量的值变了，而应该是==操作符被Unity重载了。">
+<meta property="og:image" content="http://www.usuallight.com/output1.png">
+<meta property="og:updated_time" content="2017-07-17T12:17:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="assetbundle打包策略">
-<meta name="twitter:description" content="此文只针对打包的策略作分析
-整包散包Assets:
-
-material
-texture
-model1
-model2
-effect1
-effect2
-common
-
-
-motion
-model1
-model2
-
-
-
-
-Resources:
-
-shader
-script
-setting
-navdata
-audio
-model
-effect
-ui
-img
-atlas
-other">
+<meta name="twitter:title" content="Unity中GameObject对象引用">
+<meta name="twitter:description" content="今天想到个问题，GameObject对象销毁后，其对象引用==null为true，按正常来说，一个类引用变量，在没主动置其为null的情况下与null是不等值的。因此，不是引用变量的值变了，而应该是==操作符被Unity重载了。">
+<meta name="twitter:image" content="http://www.usuallight.com/output1.png">
 
 
 
@@ -209,9 +118,9 @@ other">
 
 
 
-  <link rel="canonical" href="http://www.usuallight.com/2017/01/10/assetbundle/"/>
+  <link rel="canonical" href="http://www.usuallight.com/2017/07/17/unity-gameobjectref/"/>
 
-  <title> assetbundle打包策略 | L杂货店 </title>
+  <title> Unity中GameObject对象引用 | L杂货店 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -364,7 +273,7 @@ other">
             
             
               
-                assetbundle打包策略
+                Unity中GameObject对象引用
               
             
           </h1>
@@ -376,30 +285,11 @@ other">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-10T00:52:57+08:00" content="2017-01-10">
-              2017-01-10
+            <time itemprop="dateCreated" datetime="2017-07-17T17:11:45+08:00" content="2017-07-17">
+              2017-07-17
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/unity/" itemprop="url" rel="index">
-                    <span itemprop="name">unity</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
@@ -410,7 +300,7 @@ other">
 
           
           
-             <span id="/2017/01/10/assetbundle/" class="leancloud_visitors" data-flag-title="assetbundle打包策略">
+             <span id="/2017/07/17/unity-gameobjectref/" class="leancloud_visitors" data-flag-title="Unity中GameObject对象引用">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -432,39 +322,33 @@ other">
       
 
       
-        <p>此文只针对打包的策略作分析</p>
-<h1 id="整包"><a href="#整包" class="headerlink" title="整包"></a>整包</h1><h1 id="散包"><a href="#散包" class="headerlink" title="散包"></a>散包</h1><p>Assets:</p>
-<ul>
-<li>material</li>
-<li>texture<ul>
-<li>model1</li>
-<li>model2</li>
-<li>effect1</li>
-<li>effect2</li>
-<li>common</li>
-</ul>
-</li>
-<li>motion<ul>
-<li>model1</li>
-<li>model2</li>
-</ul>
-</li>
-<li></li>
-</ul>
-<p>Resources:</p>
-<ul>
-<li>shader</li>
-<li>script</li>
-<li>setting</li>
-<li>navdata</li>
-<li>audio</li>
-<li>model</li>
-<li>effect</li>
-<li>ui</li>
-<li>img</li>
-<li>atlas</li>
-<li>other</li>
-</ul>
+        <p>今天想到个问题，GameObject对象销毁后，其对象引用==null为true，按正常来说，一个类引用变量，在没主动置其为null的情况下与null是不等值的。因此，不是引用变量的值变了，而应该是==操作符被Unity重载了。</p>
+<a id="more"></a>
+<p>上网查了下C#有没能直接对比对象引用的接口，找到了这个：</p>
+<pre><code>object.ReferenceEquals(obj1, obj2);
+</code></pre><p>它是个静态方法，不担心被重写。于是写了以下代码作测试验证：</p>
+<pre><code>public class TestClass : MonoBehaviour
+{
+    private GameObject Obj = new GameObject(&quot;test&quot;);
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.LogFormat(&quot;== ? {0}&quot;, Obj == null);
+            Debug.LogFormat(&quot;object.ReferenceEquals ? {0}&quot;, object.ReferenceEquals(Obj, null));
+            if (Obj != null)
+            {
+                GameObject.Destroy(Obj);
+                Debug.Log(&quot;destroy obj!&quot;);
+            }
+        }
+    }
+}
+</code></pre><p>输出结果：</p>
+<p><img src="output1.png" alt=""></p>
+<p>输出结果跟预期的一样。==操作符被Unity内部重载了才导致了判空能成立。出于好奇，也试了下Equal()函数，其结果与==操作符一样，也被Unity内部重载了。</p>
+<p>因此，用GameObject对象引用时需多加注意，尽量避免用其引用作索引匹配之类的，因为C#的List或者Dictionary等数据结构是用默认的相等比较器Equal()进行对比的，除非自己特殊指定比较器。</p>
 
       
     </div>
@@ -486,8 +370,6 @@ other">
       
         <div class="post-tags">
           
-            <a href="/tags/assetbundle/" rel="tag">#assetbundle</a>
-          
             <a href="/tags/unity/" rel="tag">#unity</a>
           
         </div>
@@ -497,17 +379,13 @@ other">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/12/blog-hexo/" rel="next" title="Hexo+Next+Github 搭建个人博客">
-                <i class="fa fa-chevron-left"></i> Hexo+Next+Github 搭建个人博客
+              <a href="/2017/01/20/assetbundle-optimization/" rel="next" title="assetbundle-optimization">
+                <i class="fa fa-chevron-left"></i> assetbundle-optimization
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/01/18/howwrite/" rel="prev" title="学着写技术博客">
-                学着写技术博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -575,7 +453,7 @@ other">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -583,7 +461,7 @@ other">
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -592,7 +470,7 @@ other">
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -639,7 +517,7 @@ other">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#整包"><span class="nav-number">1.</span> <span class="nav-text">整包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#散包"><span class="nav-number">2.</span> <span class="nav-text">散包</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>

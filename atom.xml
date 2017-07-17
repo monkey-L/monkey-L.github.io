@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.usuallight.com/"/>
-  <updated>2017-07-17T09:03:04.000Z</updated>
+  <updated>2017-07-17T12:17:30.000Z</updated>
   <id>http://www.usuallight.com/</id>
   
   <author>
@@ -14,6 +14,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Unity中GameObject对象引用</title>
+    <link href="http://www.usuallight.com/2017/07/17/unity-gameobjectref/"/>
+    <id>http://www.usuallight.com/2017/07/17/unity-gameobjectref/</id>
+    <published>2017-07-17T09:11:45.000Z</published>
+    <updated>2017-07-17T12:17:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天想到个问题，GameObject对象销毁后，其对象引用==null为true，按正常来说，一个类引用变量，在没主动置其为null的情况下与null是不等值的。因此，不是引用变量的值变了，而应该是==操作符被Unity重载了。</p>
+<a id="more"></a>
+<p>上网查了下C#有没能直接对比对象引用的接口，找到了这个：</p>
+<pre><code>object.ReferenceEquals(obj1, obj2);
+</code></pre><p>它是个静态方法，不担心被重写。于是写了以下代码作测试验证：</p>
+<pre><code>public class TestClass : MonoBehaviour
+{
+    private GameObject Obj = new GameObject(&quot;test&quot;);
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.LogFormat(&quot;== ? {0}&quot;, Obj == null);
+            Debug.LogFormat(&quot;object.ReferenceEquals ? {0}&quot;, object.ReferenceEquals(Obj, null));
+            if (Obj != null)
+            {
+                GameObject.Destroy(Obj);
+                Debug.Log(&quot;destroy obj!&quot;);
+            }
+        }
+    }
+}
+</code></pre><p>输出结果：</p>
+<p><img src="output1.png" alt=""></p>
+<p>输出结果跟预期的一样。==操作符被Unity内部重载了才导致了判空能成立。出于好奇，也试了下Equal()函数，其结果与==操作符一样，也被Unity内部重载了。</p>
+<p>因此，用GameObject对象引用时需多加注意，尽量避免用其引用作索引匹配之类的，因为C#的List或者Dictionary等数据结构是用默认的相等比较器Equal()进行对比的，除非自己特殊指定比较器。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天想到个问题，GameObject对象销毁后，其对象引用==null为true，按正常来说，一个类引用变量，在没主动置其为null的情况下与null是不等值的。因此，不是引用变量的值变了，而应该是==操作符被Unity重载了。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="unity" scheme="http://www.usuallight.com/tags/unity/"/>
+    
+  </entry>
   
   <entry>
     <title>assetbundle-optimization</title>
